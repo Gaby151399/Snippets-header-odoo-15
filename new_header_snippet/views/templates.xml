@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <!-- Add into header template in the website -->
+  <template id="snippet_option_new_header" name="Snippet" inherit_id="website.snippet_options">
+    <xpath expr="//we-select[@data-variable='header-template']" position="inside">
+      <we-button title="New Menu Header"
+        data-name="header_new_opt"
+        data-customize-website-views="new_header_snippet.template_new_header"
+        data-customize-website-variable="'gaby'"
+        data-img="/new_header_snippet/static/src/img/snippets_options/header_template_new.svg"/>
+    </xpath>
+  </template>
+
+  <!-- Template of the header -->
+  <template id="template_new_header" inherit_id="website.layout" name="Template Header New" active="False">
+    <xpath expr="//header//nav" position="replace">
+      <t t-call="website.navbar">
+        <div id="top_menu_container" class="container">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </t>
+    </xpath>
+  </template>
+</odoo>
