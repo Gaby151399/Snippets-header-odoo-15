@@ -28,4 +28,10 @@
         'views/views.xml',
         'views/templates.xml',
     ],
+    'application': True,
+    'assets': {
+        'web.assets_frontend': [
+            '/new_header_snippet/static/src/js/header_new.js',
+        ]
+    }
 }
